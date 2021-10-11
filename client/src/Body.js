@@ -19,14 +19,14 @@ const Body = ({ canidate1, canidate2, votecanidate, account }) => {
       <h2>Election Results</h2>
       <hr
         style={{
-          width: "70%",
+          width: "100%",
           borderStyle: "solid",
           borderWidth: "2px",
           borderColor: "#000000",
         }}
       />
-      <div className="p-3 ml-auto mr-auto" style={{ width: "40%" }}>
-        <div className="row ml-auto mr-auto  mb-2" style={{ width: "90%" }}>
+      <div className="p-3 ml-auto mr-auto" style={{ width: "100%" }}>
+        <div className="row ml-auto mr-auto  mb-2" style={{ width: "100%" }}>
           <div className="col">
             <p>#</p>
           </div>
@@ -38,11 +38,11 @@ const Body = ({ canidate1, canidate2, votecanidate, account }) => {
           </div>
         </div>
         <hr
-          style={{ width: "90%", borderStyle: "solid", borderColor: "#000000" }}
+          style={{ width: "100%", borderStyle: "solid", borderColor: "#000000" }}
         />
         <div
           className="row ml-auto mr-auto mt-2  mb-2"
-          style={{ width: "90%" }}
+          style={{ width: "100%" }}
         >
           <div className="col">
             <p>{canidate1.id}</p>
@@ -55,11 +55,11 @@ const Body = ({ canidate1, canidate2, votecanidate, account }) => {
           </div>
         </div>
         <hr
-          style={{ width: "90%", borderStyle: "solid", borderColor: "#000000" }}
+          style={{ width: "100%", borderStyle: "solid", borderColor: "#000000" }}
         />
         <div
           className="row ml-auto mr-auto mt-2  mb-2"
-          style={{ width: "90%" }}
+          style={{ width: "100%" }}
         >
           <div className="col">
             <p>{canidate2.id}</p>
@@ -72,7 +72,7 @@ const Body = ({ canidate1, canidate2, votecanidate, account }) => {
           </div>
         </div>
       </div>
-      <div className="my-5 mr-auto ml-auto text-left" style={{ width: "70%" }}>
+      <div className="my-5 mr-auto ml-auto text-left" style={{ width: "100%" }}>
         <h5>Cast Your Vote:</h5>
         <form onSubmit={onsubmit}>
           <select name="candidate" className="form-control" onChange={onchange}>
@@ -82,7 +82,7 @@ const Body = ({ canidate1, canidate2, votecanidate, account }) => {
             <option value="1">{canidate1.name}</option>
             <option value="2">{canidate2.name}</option>
           </select>
-          <button className="btn btn-primary mt-2 btn-md w-100">
+          <button className="btn btn-primary mt-2 btn-md w-60">
             Vote Candidate{""} {Canidate}
           </button>
         </form>
