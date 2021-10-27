@@ -3,6 +3,8 @@ import Navbar from './Navbar';
 import Electionabi from "./contracts/Election.json";
 import Web3 from "web3";
 import Body from './Body';
+import {BrowserRouter as Router,Switch,Route } from 'react-router-dom'
+import Results from './Results';
 
 function App() {
 
@@ -87,15 +89,24 @@ function App() {
   }
 
   return (
+    <Router>
     <div className="App">
       <Navbar account={Currentaccount} />
+      <Route exact path="/">
       <Body
         canidate1={Candidate1}
         canidate2={Candidate2}
         votecanidate={votecanidate}
         account={Currentaccount}
       />
+        </Route>
+        <Route path="/results">
+            <Results canidate1={Candidate1}
+        canidate2={Candidate2}/>
+        </Route>
+      
     </div>
+    </Router>
   );
 }
 

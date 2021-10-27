@@ -1,24 +1,9 @@
-import React, { useState } from "react";
-import {Link} from 'react-router-dom'
+import React from 'react'
 
-
-const Body = ({ canidate1, canidate2, votecanidate, account }) => {
-  const [Canidate, setCandidate] = useState("");
-
-  const onchange = (e) => {
-    setCandidate(e.target.value);
-    console.log(e.target.value);
-  };
-
-  const onsubmit = (e) => {
-    e.preventDefault();
-    if (Canidate.id !== 0) votecanidate(Number(Canidate));
-    else window.alert("there is error in submission");
-  };
-
-  return (
-    <div className="mt-4 text-center" style={{ color: "#000000" }}>
-      {/* <h2>Election Results</h2>
+function Results( {canidate1, canidate2}) {
+    return (
+        <div>
+            <h2>Election Results</h2>
       <hr
         style={{
           width: "100%",
@@ -73,31 +58,9 @@ const Body = ({ canidate1, canidate2, votecanidate, account }) => {
             <p>{canidate2.voteCount}</p>
           </div>
         </div>
-      </div> */}
-      <div className="my-5 mr-auto ml-auto text-left" style={{ width: "100%" }}>
-        <h5>Cast Your Vote:</h5>
-        <form onSubmit={onsubmit}>
-          <select name="candidate" className="form-control" onChange={onchange}>
-            <option defaultValue value="">
-              Select
-            </option>
-            <option value="1">{canidate1.name}</option>
-            <option value="2">{canidate2.name}</option>
-          </select>
-          <button className="btn btn-primary mt-2 btn-md w-60">
-            Vote Candidate{""} {Canidate}
-          </button>
-        </form>
       </div>
+      </div>
+    )
+}
 
-      <li className="btn btn-warning mt-2 btn-md w-60">
-      <Link to="/results">Results</Link>
-          </li>
-      <p className="my-5">
-        Your address: <span className="font-weight-bold">{account}</span>
-      </p>
-    </div>
-  );
-};
-
-export default Body;
+export default Results
