@@ -12,8 +12,11 @@ const Body = ({ canidate1, canidate2, votecanidate, account }) => {
 
   const onsubmit = (e) => {
     e.preventDefault();
+    const date1=Date.now()
     if (Canidate.id !== 0) votecanidate(Number(Canidate));
     else window.alert("there is error in submission");
+    const date2=Date.now()
+    console.log(date2-date1);
   };
 
   return (
